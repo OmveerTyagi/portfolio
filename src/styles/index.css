@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-beam {
+    background: conic-gradient(from 0deg, #00ffff, #00ffcc, #00ffff);
+    z-index: 0;
+    mask-image: linear-gradient(#000, #000);
+    -webkit-mask-image: linear-gradient(#000, #000);
+  }
+
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 255, 255, 0.2);
+  }
+
+  .hover-bounce {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  .hover-bounce:hover {
+    animation: bounceAnim 0.6s;
+  }
+
+  @keyframes bounceAnim {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-6px);
+    }
+    60% {
+      transform: translateY(3px);
+    }
+  }
+
+  .tilt-card {
+    perspective: 1000px;
+  }
+
+  .tilt-card-inner {
+    transition: transform 0.2s ease;
+    transform-style: preserve-3d;
+  }
+}
